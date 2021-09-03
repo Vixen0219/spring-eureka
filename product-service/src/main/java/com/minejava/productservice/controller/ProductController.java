@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/product")
 @RequiredArgsConstructor
 public class ProductController {
+
     private final ProductRepository productRepository;
 
     // Returns list of products
