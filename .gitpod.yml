@@ -4,8 +4,6 @@ image:
 tasks:
   - init: echo 'init script' # runs during prebuild
     command: echo 'start script'
-  - command: /opt/rabbitmq/sbin/rabbitmq-server &
-  - command: rabbitmq-plugins enable rabbitmq_management
 
   - name: docker-daemon
     before: sudo docker-up
@@ -28,5 +26,3 @@ tasks:
 ports:
   - port: 3000
     onOpen: open-preview
-  - port: 5672
-  - port: 15672
