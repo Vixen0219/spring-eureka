@@ -1,0 +1,4 @@
+{
+    "spring.datasource.username": "orderserviceuser",
+    "spring.datasource.password": "nat"
+}

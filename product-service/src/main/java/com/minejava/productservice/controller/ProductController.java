@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 
-@RestController // exposes the rest API
+@RestController
 @RequestMapping("/api/product")
 @RequiredArgsConstructor
 public class ProductController {
