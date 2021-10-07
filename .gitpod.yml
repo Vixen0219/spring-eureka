@@ -2,20 +2,19 @@ image:
   file: .gitpod.Dockerfile
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
+  - name: keycloak
+    command: >
+      docker run -p 8680:8680 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2
 
-  - name: docker-daemon
-    before: sudo docker-up
-   
   - name: rabbitmq
     command: >
-      docker run 
-      --hostname my-rabbit 
-      -p 5672:5672 
-      --rm  
-      --name my-rabbit 
-      rabbitmq:3
+      docker run -it --rm
+      --hostname rabbitmq
+      -p 5672:5672
+      --rm
+      --name rabbitmq
+      rabbitmq:3.8-management
+
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
