@@ -22,12 +22,12 @@ tasks:
       rabbitmq:3.8-management
   
   - name: hashicorp vault
-    command: docker run 
+    command: > 
+      docker run 
       --cap-add=IPC_LOCK 
-      -e 
-      'VAULT_DEV_ROOT_TOKEN_ID=myroot' 
-      -e 
-      'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:1234' vault
+      -d 
+      --name=dev-vault 
+      vault
 
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
