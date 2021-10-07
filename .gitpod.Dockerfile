@@ -24,7 +24,7 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 RUN wget https://github.com/DylanDelobel/agnoster-timestamp-newline-zsh-theme/blob/master/agnoster-timestamp-newline.zsh-theme
 RUN cp agnoster-timestamp-newline.zsh-theme ~/.oh-my-zsh/custom/themes/
 
-ENV ZSH_THEME="agnoster-timestamp-newline"
+ENV ZSH_THEME agnoster-timestamp-newline
   # start zsh
 
   CMD [ "zsh" ]
