@@ -19,16 +19,15 @@ tasks:
       export JAVA_OPTS_APPEND="${JAVA_OPTS_APPEND:=-Dkeycloak.profile.feature.upload_script=enabled -Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.account2=enabled -Dkeycloak.profile.feature.account_api=enabled -Djboss.http.port=3451}" &&
       docker-compose up -d &&
       docker logs -f keycloak
-    
 
-  - name: rabbitmq
-    command: >
-      docker run -it 
-      --hostname rabbitmq
-      -p 5672:5672
-      --rm
-      --name rabbitmq
-      rabbitmq:3.8-management
+  #- name: rabbitmq
+  #  command: >
+  #    docker run -it 
+  #    --hostname rabbitmq
+  #    -p 5672:5672
+  #    --rm
+  #    --name rabbitmq
+  #    rabbitmq:3.8-management
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
@@ -38,4 +37,3 @@ ports:
   - port: 5672
   - port: 3451
     onOpen: open-browser
-    
