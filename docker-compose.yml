@@ -12,4 +12,4 @@ services:
         KEYCLOAK_LOGLEVEL: ${KEYCLOAK_LOGLEVEL}
         JAVA_OPTS_APPEND: "${JAVA_OPTS_APPEND}"
       ports:
-        - 8680:8680
+        - 3451:3451
