@@ -33,9 +33,10 @@ tasks:
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000
-    onOpen: open-preview
+    onOpen: open-browser
   - port: 8761
   - port: 8680
   - port: 3306
   - port: 5672
+  - port: 8080
     
