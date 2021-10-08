@@ -8,7 +8,7 @@ tasks:
   - name: keycloak
     before:
       echo 'Waiting for docker daemon to start' &&
-      while [ ! -S /var/run/docker.sock ]; do sleep 1; done;
+      # while [ ! -S /var/run/docker.sock ]; do sleep 1; done;
     
     init: >-
       export IMAGE="${IMAGE:=quay.io/keycloak/keycloak:12.0.4}" &&
