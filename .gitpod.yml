@@ -35,4 +35,6 @@ ports:
   - port: 3000
   - port: 8761
   - port: 8680
+  - port: 3306
+  - port: 5672
     onOpen: open-preview
