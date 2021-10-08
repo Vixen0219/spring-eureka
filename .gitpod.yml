@@ -9,7 +9,8 @@ tasks:
       -e 
       KEYCLOAK_USER=admin 
       -e 
-      KEYCLOAK_PASSWORD=admin 
+      KEYCLOAK_PASSWORD=admin
+      -Djboss.http.port=3451
       quay.io/keycloak/keycloak:15.0.2
 
   - name: rabbitmq
@@ -33,8 +34,9 @@ tasks:
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000
+    onOpen: open-preview
   - port: 8761
   - port: 8680
   - port: 3306
   - port: 5672
-    onOpen: open-preview
+    
