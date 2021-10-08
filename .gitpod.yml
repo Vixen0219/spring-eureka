@@ -20,14 +20,14 @@ tasks:
       docker-compose up -d &&
       docker logs -f keycloak
 
-  #- name: rabbitmq
-  #  command: >
-  #    docker run -it 
-  #    --hostname rabbitmq
-  #    -p 5672:5672
-  #    --rm
-  #    --name rabbitmq
-  #    rabbitmq:3.8-management
+  - name: rabbitmq
+    command: >
+      docker run -it 
+      --hostname rabbitmq
+      -p 5672:5672
+      --rm
+      --name rabbitmq
+      rabbitmq:3.8-management
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
