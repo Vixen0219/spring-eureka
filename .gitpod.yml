@@ -2,17 +2,24 @@ image:
   file: .gitpod.Dockerfile
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
+  - name: docker-daemon
+    before: sudo docker-up
+
   - name: keycloak
-    command: >
-      docker run 
-      -p 8680:8680 
-      -e 
-      KEYCLOAK_USER=admin 
-      -e 
-      KEYCLOAK_PASSWORD=admin
-      quay.io/keycloak/keycloak:15.0.2
-      -Djboss.http.port=3451
-      -b 0.0.0.0 
+    before:
+      echo 'Waiting for docker daemon to start' &&
+      whiel [ ! -S /var/run/docker.sock ]; do sleep 1; done;
+    
+    init: >-
+      export IMAGE="${IMAGE:=quay.io/keycloak/keycloak:15.0.2}" &&
+      export KEYCLOAK_USER="${KEYCLOAK_USER:=admin}" &&
+      export KEYCLOAK_PASSWORD="${KEYCLOAK_PASSWORD:=password}" &&
+      export KEYCLOAK_STATISTICS="${KEYCLOAK_STATISTICS:=all}" &&
+      export KEYCLOAK_LOGLEVEL="${KEYCLOAK_LOGLEVEL:=INFO}" &&
+      export JAVA_OPTS_APPEND="${JAVA_OPTS_APPEND:=-Dkeycloak.profile.feature.upload_script=enabled -Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.account2=enabled -Dkeycloak.profile.feature.account_api=enabled}" &&
+      docker-compose up -d &&
+      docker logs -f keycloak
+    
 
   - name: rabbitmq
     command: >
@@ -22,15 +29,6 @@ tasks:
       --rm
       --name rabbitmq
       rabbitmq:3.8-management
-  
-  #- name: hashicorp vault
-  #  command: > 
- #     docker run 
- #     --cap-add=IPC_LOCK 
- #     -d 
- #     --name=dev-vault 
- #     vault
-
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
