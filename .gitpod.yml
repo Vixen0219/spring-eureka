@@ -12,6 +12,8 @@ tasks:
       KEYCLOAK_PASSWORD=admin
       quay.io/keycloak/keycloak:15.0.2
       -Djboss.http.port=3451
+      -b 0.0.0.0 
+      -Dkeycloak.import=/opt/jboss/keycloak/imports/realm-export.json
 
   - name: rabbitmq
     command: >
