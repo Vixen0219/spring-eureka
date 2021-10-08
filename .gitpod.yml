@@ -10,8 +10,8 @@ tasks:
       KEYCLOAK_USER=admin 
       -e 
       KEYCLOAK_PASSWORD=admin
-      -Djboss.http.port=3451
       quay.io/keycloak/keycloak:15.0.2
+      -Djboss.http.port=3451
 
   - name: rabbitmq
     command: >
