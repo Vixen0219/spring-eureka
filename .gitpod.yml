@@ -33,7 +33,10 @@ tasks:
 ports:
   - port: 8761
   - port: 8680
+    onOpen: open-browser
   - port: 3306
+    onOpen: open-browser
   - port: 5672
+    onOpen: open-browser
   - port: 3451
     onOpen: open-browser
