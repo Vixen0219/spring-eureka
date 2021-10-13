@@ -16,7 +16,7 @@ tasks:
       export KEYCLOAK_PASSWORD="${KEYCLOAK_PASSWORD:=password}" &&
       export KEYCLOAK_STATISTICS="${KEYCLOAK_STATISTICS:=all}" &&
       export KEYCLOAK_LOGLEVEL="${KEYCLOAK_LOGLEVEL:=INFO}" &&
-      export JAVA_OPTS_APPEND="${JAVA_OPTS_APPEND:=-Dkeycloak.profile.feature.upload_script=enabled -Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.account2=enabled -Dkeycloak.profile.feature.account_api=enabled -Djboss.http.port=3451}" &&
+      export JAVA_OPTS_APPEND="${JAVA_OPTS_APPEND:=-Dkeycloak.profile.feature.upload_script=enabled -Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.account2=enabled -Dkeycloak.profile.feature.account_api=enabled -Djboss.http.port=8680}" &&
       docker-compose up -d &&
       docker logs -f keycloak
 
