@@ -6,7 +6,7 @@ ports:
   - port: 3306
   - port: 5672
   - port: 3451
-    onOpen: open-browser
+    onOpen: open-preview
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: docker-daemon
