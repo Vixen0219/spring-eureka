@@ -1,5 +1,12 @@
 image:
   file: .gitpod.Dockerfile
+ports:
+  - port: 8761
+  - port: 8680
+  - port: 3306
+  - port: 5672
+  - port: 3451
+    onOpen: open-browser
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: docker-daemon
@@ -31,10 +38,4 @@ tasks:
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 # check which ports to add
-ports:
-  - port: 8761
-  - port: 8680
-  - port: 3306
-  - port: 5672
-  - port: 3451
-    onOpen: open-browser
+
