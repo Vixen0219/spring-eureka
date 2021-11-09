@@ -5,8 +5,6 @@ ports:
   - port: 8680
   - port: 3306
   - port: 5672
-  - port: 3451
-    onOpen: open-preview
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: docker-daemon
@@ -17,7 +15,7 @@ tasks:
       echo 'Waiting for docker daemon to start' &&
       # while [ ! -S /var/run/docker.sock ]; do sleep 1; done;
     
-    init: >-
+    command: >-
       export IMAGE="${IMAGE:=quay.io/keycloak/keycloak:12.0.4}" &&
       export KEYCLOAK_USER="${KEYCLOAK_USER:=admin}" &&
       export KEYCLOAK_PASSWORD="${KEYCLOAK_PASSWORD:=password}" &&
