@@ -53,4 +53,3 @@ ENV ZSH_THEME agnoster-timestamp-newline
   # start zsh
 
   CMD [ "zsh" ]
-RUN docker-compose up -d &&	docker logs -f keycloak
