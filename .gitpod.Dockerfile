@@ -9,12 +9,12 @@ RUN ["apt-get", "update"]
 RUN ["apt-get", "install", "-y", "zsh"]
 RUN ["apt-get", "install", "fonts-powerline"]
 
-RUN wget https://releases.hashicorp.com/vault/1.3.2/vault_1.3.2_linux_amd64.zip && \
-	unzip vault_1.3.2_linux_amd64.zip && \
-	rm -f vault_1.3.2_linux_amd64.zip && \
-	chmod +x vault && \
-	mv vault /usr/local/bin/ && \
-	echo "export VAULT_ADDR=http://127.0.0.1:8200" >> .bashrc
+#RUN wget https://releases.hashicorp.com/vault/1.3.2/vault_1.3.2_linux_amd64.zip && \
+#	unzip vault_1.3.2_linux_amd64.zip && \
+#	rm -f vault_1.3.2_linux_amd64.zip && \
+#	chmod +x vault && \
+#	mv vault /usr/local/bin/ && \
+#	echo "export VAULT_ADDR=http://127.0.0.1:8200" >> .bashrc
 RUN curl https://krypt.co/kr | sh; exit 0
 RUN wget -O direnv https://github.com/direnv/direnv/releases/download/v2.21.2/direnv.linux-amd64 && \
 	chmod +x direnv && \
