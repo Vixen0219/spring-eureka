@@ -15,7 +15,7 @@ tasks:
       echo 'Waiting for docker daemon to start' &&
       # while [ ! -S /var/run/docker.sock ]; do sleep 1; done;
     
-    command: >-
+    init: >-
       export IMAGE="${IMAGE:=quay.io/keycloak/keycloak:12.0.4}" &&
       export KEYCLOAK_USER="${KEYCLOAK_USER:=admin}" &&
       export KEYCLOAK_PASSWORD="${KEYCLOAK_PASSWORD:=password}" &&
