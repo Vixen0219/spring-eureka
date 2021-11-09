@@ -3,7 +3,7 @@ image:
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: docker-daemon
-    before: sudo docker-up
+    # before: sudo docker-up
 
   - name: keycloak
     before:
@@ -16,7 +16,7 @@ tasks:
       export KEYCLOAK_PASSWORD="${KEYCLOAK_PASSWORD:=password}" &&
       export KEYCLOAK_STATISTICS="${KEYCLOAK_STATISTICS:=all}" &&
       export KEYCLOAK_LOGLEVEL="${KEYCLOAK_LOGLEVEL:=INFO}" &&
-      export JAVA_OPTS_APPEND="${JAVA_OPTS_APPEND:=-Dkeycloak.profile.feature.upload_script=enabled -Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.account2=enabled -Dkeycloak.profile.feature.account_api=enabled -Djboss.http.port=8180}" &&
+      export JAVA_OPTS_APPEND="${JAVA_OPTS_APPEND:=-Dkeycloak.profile.feature.upload_script=enabled -Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.account2=enabled -Dkeycloak.profile.feature.account_api=enabled -Djboss.http.port=3451}" &&
       docker-compose up -d &&
       docker logs -f keycloak
 
@@ -30,6 +30,7 @@ tasks:
       rabbitmq:3.8-management
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+# check which ports to add
 ports:
   - port: 8761
   - port: 8680
