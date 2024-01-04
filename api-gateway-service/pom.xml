@@ -2,21 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.4</version>
-        <relativePath/>
+        <groupId>com.minejava</groupId>
+        <artifactId>spring-microservices-cloud</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../base/cloud/pom.xml</relativePath>
         <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.minejava</groupId>
+
     <artifactId>api-gateway-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>api-gateway-service</name>
     <description>API Gateway Service</description>
-    <properties>
-        <java.version>11</java.version>
-        <spring-cloud.version>2020.0.3</spring-cloud.version>
-    </properties>
+
     <dependencies>
         <!-- API Gateway -->
         <dependency>
@@ -28,7 +25,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>3.0.3</version>
         </dependency>
         <!-- OAuth2 dependency and spring security -->
         <dependency>
